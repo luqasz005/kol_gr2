@@ -1,23 +1,35 @@
-#Write a library that contains a class that can represent any 2𝑥2 real matrice. 
-#Include two functions to calculate the sum and product of two matrices. 
-#Next, write a program that imports this library module and use it to perform calculations.
-#Examples:
-#
-# matrix_1 = Matrix(4,5,6,7)
-# matrix_2 = Matrix(2,2,2,1)
-#
-# matrix_3 = matrix_2.add(matrix_1)
-#
-#Try to expand your implementation as best as you can. 
-#Think of as many features as you can, and try implementing them.
-#(If you want you can expand implementation to NxN matrix.)
-#Make intelligent use of pythons syntactic sugar (overloading, iterators, generators, etc)
-#Most of all: CREATE GOOD, RELIABLE, READABLE CODE.
-#The goal of this task is for you to SHOW YOUR BEST python programming skills.
-#Impress everyone with your skills, show off with your code.
-#
-#When you are done upload this code to your github repository. 
-#The whole repository MUST be named "kol_gr2"! 
-#
-#Delete these comments before commit!
-#Good luck.
+#!/usr/bin/env python2.6
+
+class Matrix:
+	def __init__(self,a,b,c,d):
+		self.a1 = a
+		self.a2 = b
+		self.b1 = c
+		self.b2 = d
+	
+	def add(self,matrix):
+		#return Matrix(self.a1 + matrix.a1,self.a2 + matrix.a2,self.b1 + matrix.b1,self.b2 + matrix.b2)
+		self.a1 += matrix.a1
+		self.a2 += matrix.a2
+		self.b1 += matrix.b1
+		self.b2 += matrix.b2		
+
+	def __print__(self):
+		print(self.a1,self.a2)
+		print('\n')
+		print(self.b1,self.b2)
+
+def printM(mat):
+	print(mat.a1,mat.a2)
+	print(mat.b1,mat.b2)
+
+matrix_1 = Matrix(4,5,6,7)
+printM(matrix_1)
+matrix_2 = Matrix(2,2,2,1)
+printM(matrix_2)
+
+matrix_3 = matrix_2.add(matrix_1)			
+#printM(matrix_3)		
+
+	
+	
